@@ -15,12 +15,12 @@
         </div>
         <div class="hero-stats">
           <div>
-            <span>总时长</span>
-            <strong id="totalDuration">0:00</strong>
+            <span>可放时长</span>
+            <strong id="screenableDuration">0:00</strong>
           </div>
           <div>
-            <span>破损片段</span>
-            <strong id="damageCount">0</strong>
+            <span>待检查</span>
+            <strong id="pendingCount">0</strong>
           </div>
           <div>
             <span>片段数</span>
@@ -54,7 +54,7 @@
 
       <section class="layout">
         <aside class="panel">
-          <h2>录入片段</h2>
+          <h2 id="formTitle">录入片段</h2>
           <form id="segmentForm" class="segment-form">
             <label>
               片段编号
@@ -88,18 +88,20 @@
               缩略图
               <input id="thumbInput" type="file" accept="image/*" />
             </label>
+            <p id="thumbHint" class="field-hint"></p>
             <label>
               备注
               <textarea id="noteInput" rows="4" placeholder="试映前要留意的画面、接片或声音点"></textarea>
             </label>
-            <button class="primary" type="submit">加入放映清单</button>
+            <button class="primary" id="submitBtn" type="submit">加入放映清单</button>
+            <button type="button" id="cancelEditBtn" class="cancel-btn" hidden>取消修改</button>
           </form>
         </aside>
 
         <section class="panel list-panel">
           <div class="panel-head">
             <h2>放映顺序</h2>
-            <span>拖拽片段调整顺序</span>
+            <span>待检查 → 已处理 → 可放映，拖拽调序不丢状态</span>
           </div>
           <div id="segmentList" class="segment-list"></div>
         </section>
