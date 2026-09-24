@@ -14,13 +14,17 @@
           <h1>胶片分镜条核对台</h1>
         </div>
         <div class="hero-stats">
+          <div class="stat-ready">
+            <span>可放时长</span>
+            <strong id="projectableDuration">0:00</strong>
+          </div>
+          <div class="stat-pending">
+            <span>待检查</span>
+            <strong id="pendingCount">0</strong>
+          </div>
           <div>
             <span>总时长</span>
             <strong id="totalDuration">0:00</strong>
-          </div>
-          <div>
-            <span>破损片段</span>
-            <strong id="damageCount">0</strong>
           </div>
           <div>
             <span>片段数</span>
@@ -43,6 +47,15 @@
             <option value="偏青">偏青</option>
             <option value="偏黄">偏黄</option>
             <option value="褪色">褪色</option>
+          </select>
+        </label>
+        <label>
+          片段状态
+          <select id="statusFilter">
+            <option value="all">全部</option>
+            <option value="pending">待检查</option>
+            <option value="processed">已处理</option>
+            <option value="ready">可放映</option>
           </select>
         </label>
         <label>
